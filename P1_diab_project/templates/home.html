@@ -1,0 +1,45 @@
+<html>
+<head>
+<title> Diabetes Predictor </title>
+<style>
+			* {font-size:40px;}
+			body {background-color:azure;}
+
+</style>
+<script>
+		function check()
+		{
+			let fs = document.getElementById("fs");
+			let ans = document.getElementById("ans");
+			if (fs.value === "")
+			{
+				alert("You did not enter Fasting sugar");
+				ans.innerHTML = ""
+				fs.focus()
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+
+</script>
+<meta name="viewport" content="width=content=width, initial-scale=1.0">
+</head>
+<body>
+<center>
+<h1> Diabetes Predictor </h1>
+<form onsubmit="return check()">
+<input type="number" step="0.01", name="fs" id="fs" placeholder="Enter Fasting sugar" />
+<br><br>
+Frequent Urination
+<input type="radio" name="fu" value="yes" /> Yes
+<input type="radio" name="fu" value="no" checked=true /> No
+<br><br>
+<input type="submit" value="Predict Diabetes" />
+</form>
+<h2 id="ans">{{ msg }}</h2>
+</center>
+</body>
+</html>
